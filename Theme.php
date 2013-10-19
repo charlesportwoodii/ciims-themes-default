@@ -9,6 +9,11 @@ class Theme extends CiiSettingsModel
 	private $theme = 'default';
 
     /**
+     * @var bool    Enables the use and inclusion of Bootstrap
+     */
+    public $useBootstrap = true;
+
+    /**
      * @var string  The user's twitter handle
      */
 	protected $twitterHandle = NULL;
