@@ -1,6 +1,8 @@
 <?php
 
-require __DIR__.DS.'vendor'.DS.'autoload.php';
+if (file_exists(__DIR__.DS.'vendor'.DS.'autoload.php'))
+	require __DIR__.DS.'vendor'.DS.'autoload.php';
+
 Yii::import('application.modules.dashboard.components.CiiSettingsModel');
 class Theme extends CiiThemesModel
 {
