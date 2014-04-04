@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4437b6feab31e23927b310c19a2b4536",
+    "hash": "b2682f78b2d74db936b55a21981c1b92",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -53,23 +53,20 @@
         },
         {
             "name": "google/apiclient",
-            "version": "dev-master",
+            "version": "1.0.4-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "e9af85c2b0628fd888c4f8017786cc18b59956af"
+                "reference": "eb5934d58761f1a8575e6df6de02fdce89dd89d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/e9af85c2b0628fd888c4f8017786cc18b59956af",
-                "reference": "e9af85c2b0628fd888c4f8017786cc18b59956af",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/eb5934d58761f1a8575e6df6de02fdce89dd89d2",
+                "reference": "eb5934d58761f1a8575e6df6de02fdce89dd89d2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
             "autoload": {
@@ -89,7 +86,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2014-04-04 06:03:54"
+            "time": "2014-03-07 17:54:19"
         },
         {
             "name": "j7mbo/twitter-api-php",
@@ -140,7 +137,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "j7mbo/twitter-api-php": 20,
-        "google/apiclient": 20
+        "google/apiclient": 10
     },
     "platform": [
 
