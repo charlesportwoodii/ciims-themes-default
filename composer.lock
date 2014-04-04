@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b2682f78b2d74db936b55a21981c1b92",
+    "hash": "1e4f2bc3a8c8e1d1a8ba321dab658b59",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -89,43 +89,31 @@
             "time": "2014-03-07 17:54:19"
         },
         {
-            "name": "j7mbo/twitter-api-php",
+            "name": "kertz/twitteroauth",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/J7mbo/twitter-api-php.git",
-                "reference": "ab76f1c1e6bf83f0a257216cbaf9932b7cc19a3f"
+                "url": "https://github.com/kertz/twitteroauth.git",
+                "reference": "97b677ca030e7de7dcade797aabb4af8a3aa463f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/J7mbo/twitter-api-php/zipball/ab76f1c1e6bf83f0a257216cbaf9932b7cc19a3f",
-                "reference": "ab76f1c1e6bf83f0a257216cbaf9932b7cc19a3f",
+                "url": "https://api.github.com/repos/kertz/twitteroauth/zipball/97b677ca030e7de7dcade797aabb4af8a3aa463f",
+                "reference": "97b677ca030e7de7dcade797aabb4af8a3aa463f",
                 "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "TwitterAPIExchange.php"
+                "classmap": [
+                    "twitteroauth"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GNU Public License"
-            ],
-            "authors": [
-                {
-                    "name": "James Mallison",
-                    "homepage": "https://github.com/j7mbo/twitter-api-php"
-                }
-            ],
-            "description": "Simple PHP Wrapper for Twitter API v1.1 calls",
-            "homepage": "https://github.com/j7mbo/twitter-api-php",
-            "keywords": [
-                "api",
-                "php",
-                "twitter"
-            ],
-            "time": "2013-10-03 10:04:59"
+            "time": "2014-02-23 11:27:58"
         }
     ],
     "packages-dev": [
@@ -136,7 +124,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "j7mbo/twitter-api-php": 20,
+        "kertz/twitteroauth": 20,
         "google/apiclient": 10
     },
     "platform": [

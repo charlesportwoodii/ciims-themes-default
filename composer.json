@@ -27,7 +27,7 @@
     "homepage": "https://www.ciims.org",
     "require": {
 	"facebook/php-sdk": "v3.2.3",
-	"j7mbo/twitter-api-php": "dev-master",
+	"kertz/twitteroauth": "dev-master",
 	"google/apiclient": "1.0.4-beta"
     }
 }
