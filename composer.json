@@ -26,7 +26,7 @@
     },
     "homepage": "https://www.ciims.org",
     "require": {
-	"facebook/php-sdk" : "dev-master",
+	"facebook/php-sdk" : "*",
 	"j7mbo/twitter-api-php": "dev-master",
 	"google/apiclient": "dev-master"
     }
