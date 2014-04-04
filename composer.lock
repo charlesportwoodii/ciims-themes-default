@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e65d3000c6a60d01853256a8c4729065",
+    "hash": "4437b6feab31e23927b310c19a2b4536",
     "packages": [
         {
             "name": "facebook/php-sdk",
-            "version": "dev-master",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "8a992afce97122556c4e42b0f1c1d60b9d49276d"
+                "reference": "6714042fa2f5979d4c64c7d11fb4bcab16bdf6cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/8a992afce97122556c4e42b0f1c1d60b9d49276d",
-                "reference": "8a992afce97122556c4e42b0f1c1d60b9d49276d",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/6714042fa2f5979d4c64c7d11fb4bcab16bdf6cb",
+                "reference": "6714042fa2f5979d4c64c7d11fb4bcab16bdf6cb",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2014-04-04 02:27:38"
+            "time": "2013-11-19 23:11:14"
         },
         {
             "name": "google/apiclient",
@@ -139,7 +139,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "facebook/php-sdk": 20,
         "j7mbo/twitter-api-php": 20,
         "google/apiclient": 20
     },
