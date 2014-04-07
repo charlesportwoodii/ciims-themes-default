@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3caae4295d0b4f7da3b4c3255d6aa052",
+    "hash": "c9d73dbaef7463d40b78076e7745b040",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.12",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "4127333b03e8b4c08d081958548aae5419d1a2fa"
+                "url": "https://github.com/charlesportwoodii/installers.git",
+                "reference": "c5e139b9bdb42e3c040f5fac4eccee2a2dbd0cf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/4127333b03e8b4c08d081958548aae5419d1a2fa",
-                "reference": "4127333b03e8b4c08d081958548aae5419d1a2fa",
+                "url": "https://api.github.com/repos/charlesportwoodii/installers/zipball/c5e139b9bdb42e3c040f5fac4eccee2a2dbd0cf1",
+                "reference": "c5e139b9bdb42e3c040f5fac4eccee2a2dbd0cf1",
                 "shasum": ""
             },
             "replace": {
@@ -38,7 +38,6 @@
                     "Composer\\Installers\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -46,48 +45,50 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
-                    "role": "Developer"
+                    "homepage": "https://github.com/shama"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
+                "AGL",
+                "AnnotateCms",
+                "CakePHP",
+                "CodeIgniter",
                 "Craft",
+                "Croogo",
+                "Drupal",
+                "Elgg",
+                "FuelPHP",
                 "Hurad",
+                "Joomla",
+                "Kohana",
+                "Laravel",
+                "Lithium",
+                "MODULEWork",
                 "MODX Evo",
+                "Magento",
+                "Mako",
+                "MediaWiki",
                 "OXID",
+                "PPI",
+                "Piwik",
+                "SilverStripe",
+                "TYPO3",
                 "WolfCMS",
-                "agl",
-                "annotatecms",
-                "cakephp",
-                "codeigniter",
+                "WordPress",
+                "Zend",
+                "Zikula",
                 "concrete5",
-                "croogo",
-                "drupal",
-                "elgg",
-                "fuelphp",
                 "installer",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lithium",
-                "magento",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "phpbb",
-                "piwik",
-                "ppi",
+                "phpBB",
                 "shopware",
-                "silverstripe",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "zend",
-                "zikula"
+                "symfony"
             ],
-            "time": "2014-02-24 04:21:34"
+            "support": {
+                "source": "https://github.com/charlesportwoodii/installers/tree/master"
+            },
+            "time": "2014-04-07 20:55:57"
         },
         {
             "name": "facebook/php-sdk",
@@ -211,6 +212,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "composer/installers": 20,
         "kertz/twitteroauth": 20,
         "google/apiclient": 20
     },
