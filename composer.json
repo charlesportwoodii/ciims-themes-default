@@ -20,9 +20,9 @@
     ],
     "support": {
         "email": "charlesportwoodii@ethreal.net",
-        "issues": "https://github.com/charlesportwoodii/CiiMS/issues",
-        "wiki" : "https://github.com/charlesportwoodii/CiiMS/wiki/_pages",
-        "source" : "https://github.com/charlesportwoodii/CiiMS"
+        "issues": "https://github.com/charlesportwoodii/defaulttheme/issues",
+        "wiki" : "https://github.com/charlesportwoodii/defaulttheme/wiki/_pages",
+        "source" : "https://github.com/charlesportwoodii/defaulttheme"
     },
     "homepage": "https://www.ciims.org",
     "require": {
