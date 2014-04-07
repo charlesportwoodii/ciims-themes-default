@@ -28,6 +28,7 @@
     "require": {
 	"composer/installers": "~1.0",
 	"facebook/php-sdk": "v3.2.3",
-	"kertz/twitteroauth": "dev-master"
+	"kertz/twitteroauth": "dev-master",
+	"google/apiclient": "dev-master"
     }
 }
