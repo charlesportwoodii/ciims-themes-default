@@ -3,7 +3,7 @@
     "description": "The default theme that comes with CiiMS",
     "license": "MIT",
     "version" : "1.1",
-    "type" : "ciims-theme",
+    "type" : "drupal-theme",
     "keywords": [
         "ciims",
         "CiiMS",
@@ -25,11 +25,8 @@
         "source" : "https://github.com/charlesportwoodii/defaulttheme"
     },
     "homepage": "https://www.ciims.org",
-    "repositories": [
-        { "type" : "vcs", "url" : "https://github.com/charlesportwoodii/installers" }
-    ],
     "require": {
-	"composer/installers": "dev-master",
+	"composer/installers": "~1.0",
 	"facebook/php-sdk": "v3.2.3",
 	"kertz/twitteroauth": "dev-master",
 	"google/apiclient": "dev-master"
