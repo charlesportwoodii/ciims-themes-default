@@ -3,93 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "abb851ab5bd87446af460c1e0e5f30c3",
+    "hash": "afff8ee0adc6c31149df0b470d1d6591",
     "packages": [
-        {
-            "name": "composer/installers",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/charlesportwoodii/installers.git",
-                "reference": "c5ef36f3d0296c606ee4fa29d5578763cf3a74e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/charlesportwoodii/installers/zipball/c5ef36f3d0296c606ee4fa29d5578763cf3a74e2",
-                "reference": "c5ef36f3d0296c606ee4fa29d5578763cf3a74e2",
-                "shasum": ""
-            },
-            "replace": {
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "composer-installer",
-            "extra": {
-                "class": "Composer\\Installers\\Installer",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
-            "keywords": [
-                "AGL",
-                "AnnotateCms",
-                "CakePHP",
-                "CodeIgniter",
-                "Craft",
-                "Croogo",
-                "Drupal",
-                "Elgg",
-                "FuelPHP",
-                "Hurad",
-                "Joomla",
-                "Kohana",
-                "Laravel",
-                "Lithium",
-                "MODULEWork",
-                "MODX Evo",
-                "Magento",
-                "Mako",
-                "MediaWiki",
-                "OXID",
-                "PPI",
-                "Piwik",
-                "SilverStripe",
-                "TYPO3",
-                "WolfCMS",
-                "WordPress",
-                "Zend",
-                "Zikula",
-                "concrete5",
-                "installer",
-                "phpBB",
-                "shopware",
-                "symfony"
-            ],
-            "support": {
-                "source": "https://github.com/charlesportwoodii/installers/tree/master"
-            },
-            "time": "2014-04-07 21:24:39"
-        },
         {
             "name": "facebook/php-sdk",
             "version": "v3.2.3",
@@ -212,7 +127,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "composer/installers": 20,
         "kertz/twitteroauth": 20,
         "google/apiclient": 20
     },
