@@ -25,7 +25,11 @@
         "source" : "https://github.com/charlesportwoodii/defaulttheme"
     },
     "homepage": "https://www.ciims.org",
+    "repositories": [
+        { "type" : "vcs", "url": "https://github.com/charlesportwoodii/installers" }
+    ],
     "require": {
+	"composer/installers": "dev-master",
 	"facebook/php-sdk": "v3.2.3",
 	"kertz/twitteroauth": "dev-master",
 	"google/apiclient": "dev-master"
