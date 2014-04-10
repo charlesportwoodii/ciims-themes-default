@@ -11,12 +11,12 @@
 
             <h4><?php echo Yii::t('DefaultTheme.main', 'Categories'); ?></h4>
 			<?php $this->widget('zii.widgets.CMenu', array(
-                'items' => $this->params['theme']->getCategories()
+                'items' => $this->theme->getCategories()
             )); ?>
 
             <h4><?php echo Yii::t('DefaultTheme.main', 'Recent Posts'); ?></h4>
 			<?php $this->widget('zii.widgets.CMenu', array(
-                'items' => $this->params['theme']->getRecentPosts()
+                'items' => $this->theme->getRecentPosts()
             )); ?>
 		</div>
 	</div>

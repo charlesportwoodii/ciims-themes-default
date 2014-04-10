@@ -9,7 +9,7 @@
             <?php echo CHtml::endForm(); ?>
 
 			<h4><?php echo Yii::t('DefaultTheme.main', 'Related Posts'); ?></h4>
-			<?php $this->widget('zii.widgets.CMenu', array('items' => $this->params['theme']->getRelatedPosts($this->params['data']['id'], $this->params['data']['category_id']))); ?>
+			<?php $this->widget('zii.widgets.CMenu', array('items' => $this->theme->getRelatedPosts($this->params['data']['id'], $this->params['data']['category_id']))); ?>
 		
 			<!-- Tag Cloud -->
 			<?php if ($items = $this->getContentTags($this->params['data']['id'])): ?>
