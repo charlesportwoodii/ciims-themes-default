@@ -521,6 +521,15 @@ main .social-icons.twitter {
 main .social-icons.twitter:hover {
     background: url('../img/icons/twitter_hover.png') no-repeat;
 }
+
+main #twitterFeed a {
+	display: inline;
+	color: #f67d42;
+}
+
+main #twitterFeed a:after {
+	content: "";
+}
 main .container-50 {
 	width: 49%;
 	font-size: 14px;

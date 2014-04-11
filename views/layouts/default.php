@@ -18,6 +18,13 @@
 			<?php $this->widget('zii.widgets.CMenu', array(
                 'items' => $this->theme->getRecentPosts()
             )); ?>
+
+			<!-- Recent Tweets -->
+			<?php if ($this->theme->twitterHandle != NULL && $this->theme->twitterTweetsToFetch > 0): ?>
+				<h4><?php echo Yii::t('DefaultTheme.main', 'Recent Tweets'); ?></h4>
+				<?php Yii::app()->clientScript->registerScript('loadRecentTweets', '$(document).ready(function() { Theme.Callbacks.getTweets(); });'); ?>
+				<div id="twitterFeed"></div>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="clearfix"></div>

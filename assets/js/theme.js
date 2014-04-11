@@ -5,8 +5,7 @@ var Theme = {
 
 	/**
 	 * Retrieves a given user's comments and displays them
-	 * @param  {[type]} userId [description]
-	 * @return {[type]}        [description]
+	 * @param  int userId The user's ID
 	 */
 	profileComments : function(userId) {
 		$("#ciims_comments").html("<div class='comment_messages'><div class='clearfix'></div></div><div class='comments_container' style='display:none'></div>");
@@ -203,5 +202,38 @@ var Theme = {
 
 			return true;
 		});
+	},
+
+	Callbacks : {
+
+		/**
+		 * Retrieves the recent list of tweets
+		 */
+		getTweets : function() {
+			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
+
+			$.get(Theme.endPoint + "/api/theme/callback/theme/default/method/getTweets", function(data) {
+
+
+				var dom = $("<ul id=\"tweet-list\"></ul>");
+				if (!data.errors)
+				{
+					$(data).each(function() {
+						var tweet = $("<li></li>"),
+							date = new Date($(this)[0].created_at),
+							message = $(this)[0].text;
+
+						$(tweet).append($('<p></p>').addClass("date").html(date.toDateString()));
+		                $(tweet).append($('<p></p>').html(message));
+						$(dom).append(tweet);
+					});
+				}
+				else {
+					$(dom).append($("<li></li>").html(data.errors[0].message));
+				}
+
+				$("#twitterFeed").append(dom);
+			});
+		}
 	}
 };
