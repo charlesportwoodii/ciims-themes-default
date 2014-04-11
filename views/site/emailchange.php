@@ -4,7 +4,7 @@
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'					=> 'login-form',
         'focus'					=> 'input[type="text"]:first',
-        'regiterPureCss'        => false,
+        'registerPureCss'        => false,
         'enableAjaxValidation'	=>	true,
         'htmlOptions' => array(
             'class' => 'pure-form pure-form-stacked'
