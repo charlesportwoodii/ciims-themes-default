@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0775c8bf8ff94276043ae0cd6d93b3d1",
+    "hash": "07f7b4f66bdec9f45c380350aa027cb3",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "242467783ed401aed137ba3eed8a6e30c0dc95c6"
+                "reference": "e1a2f23ada736923627d1db315d045f6d1d1cc1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/242467783ed401aed137ba3eed8a6e30c0dc95c6",
-                "reference": "242467783ed401aed137ba3eed8a6e30c0dc95c6",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/e1a2f23ada736923627d1db315d045f6d1d1cc1b",
+                "reference": "e1a2f23ada736923627d1db315d045f6d1d1cc1b",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2014-04-05 06:04:45"
+            "time": "2014-04-11 14:05:43"
         },
         {
             "name": "kertz/twitteroauth",
