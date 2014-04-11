@@ -24,13 +24,28 @@ class Theme extends CiiThemesModel
 	protected $twitterTweetsToFetch = 0;
 
 	/**
+     * @var string  The user's facebook numeric ID
+     */
+	protected $facebookUserId = NULL;
+
+	/**
+	 * @var string 	The Google+ Public Server API Key
+	 */
+	protected $googlePlusAPIKey = NULL;
+
+	/**
+	 * @var string My Google+ User ID
+	 */
+	protected $googlePlusUserId = NULL;
+
+	/**
      * Validation Rules
      * @return array
      */
 	public function rules()
 	{
 		return array(
-			array('twitterHandle', 'length', 'max' => 255),
+			array('twitterHandle, facebookUserId, googlePlusAPIKey, googlePlusUserId', 'length', 'max' => 255),
 			array('twitterTweetsToFetch', 'numerical', 'integerOnly' => true, 'min' => 0),
 		);
 	}
@@ -43,6 +58,8 @@ class Theme extends CiiThemesModel
 	{
 		return array(
 			Yii::t('DefaultTheme', 'Twitter Settings') => array('twitterHandle', 'twitterTweetsToFetch'),
+			Yii::t('DefaultTheme', 'Facebook Settings') => array('facebookUserId'),
+			Yii::t('DefaultTheme', 'Google+ Settings') => array('googlePlusAPIKey', 'googlePlusUserId'),
 		);
 	}
 
@@ -54,7 +71,10 @@ class Theme extends CiiThemesModel
 	{
 		return array(
 			'twitterHandle'        => Yii::t('DefaultTheme', 'Twitter Handle'),
-			'twitterTweetsToFetch' => Yii::t('DefaultTheme', 'Number of Tweets to Fetch')
+			'twitterTweetsToFetch' => Yii::t('DefaultTheme', 'Number of Tweets to Fetch'),
+			'facebookUserId' 	   => Yii::t('Defaulttheme', 'Facebook User ID'),
+			'googlePlusAPIKey'	   => Yii::t('Defaulttheme', 'Google+ Public API Key (server)'),
+			'googlePlusUserId'	   => Yii::t('DefaultTheme', 'Your Google+ User ID')
 		);
 	}
 
@@ -66,6 +86,8 @@ class Theme extends CiiThemesModel
 	{
 		// Bust the cache
 		Yii::app()->cache->delete($this->theme . '_settings_tweets');
+		Yii::app()->cache->delete($this->theme . '_settings_facebook_data');
+		Yii::app()->cache->delete($this->theme . '_settings_g+_activities');
 		return parent::afterSave();
 	}
 
@@ -76,6 +98,9 @@ class Theme extends CiiThemesModel
 	public function getTweets($postData=NULL)
 	{
 		header("Content-Type: application/json");
+
+		if ($this->twitterHandle == NULL || $this->twitterTweetsToFetch == 0)
+			return false;
 
     	try {
     		$connection = new TwitterOAuth(
@@ -107,5 +132,71 @@ class Theme extends CiiThemesModel
 			echo CJSON::encode(array('errors' => array(array('message' => $e->getMessage()))));
 		}
 		Yii::app()->end();
+	}
+
+	/**
+	 * getFacebookPosts callback method
+	 * Retrieves recent status/stories(?) from Facebook
+	 * @param  array $postdata    	$_POST response data
+	 */
+	public function getFacebookPosts($postData=NULL)
+	{
+		if ($this->facebookUserId == NULL)
+			return false;
+
+		$result = Yii::app()->cache->get($this->theme . '_settings_facebook_data');
+
+		if ($result == false)
+		{
+			$config = array(
+		    	'appId' => Cii::getConfig('ha_facebook_id', NULL, NULL),
+		      	'secret' => Cii::getConfig('ha_facebook_secret', NULL, NULL),
+		      	'fileUpload' => false,
+		      	'allowSignedRequest' => false,
+		  	);
+
+		  	$facebook = new Facebook($config);
+
+		  	$user_id = Cii::getConfig('ha_facebook_user_id', NULL, NULL);
+
+		  	try {
+			  	$result = $facebook->api('/'.$user_id.'/feed/');
+			  	Yii::app()->cache->set($this->theme.'_settings_facebook_data', $result, 900);
+			  	return $result;
+			} catch(FacebookApiException $e) {
+				return $e->getMessage();
+	      	}
+      	}
+      	else
+      		return $result;
+
+      	Yii::app()->end();
+	}
+
+	/**
+	 * getGooglePlusPosts callback method
+	 * Retrieves recent activities from Google+
+	 * @param  array $postdata    	$_POST response data
+	 */
+	public function getGooglePlusPosts($postData=NULL)
+	{
+		if ($this->googlePlusAPIKey == NULL || $this->googlePlusUserId == NULL)
+			return false;
+
+		$result = Yii::app()->cache->get($this->theme . '_settings_g+_activities');
+
+		if ($result == false)
+		{
+			$client = new Google_Client();
+			$client->setApplicationName("Client_Library_Examples");
+			$client->setDeveloperKey($this->googlePlusAPIKey);
+
+			$service = new Google_Service_Plus($client);
+
+			$result = $service->activities->listActivities($this->googlePlusUserId, 'public');
+
+			Yii::app()->cache->set($this->theme . '_settings_g+_activities',$result, 900);
+		}
+		return $result;
 	}
 }

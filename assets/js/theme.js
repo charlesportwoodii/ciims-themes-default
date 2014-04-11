@@ -204,6 +204,9 @@ var Theme = {
 		});
 	},
 
+	/**
+	 * Callback actions for API
+	 */
 	Callbacks : {
 
 		/**
@@ -213,10 +216,8 @@ var Theme = {
 			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
 
 			$.get(Theme.endPoint + "/api/theme/callback/theme/default/method/getTweets", function(data) {
-
-
 				var dom = $("<ul id=\"tweet-list\"></ul>");
-				if (!data.errors)
+				if (data.status == 200)
 				{
 					$(data).each(function() {
 						var tweet = $("<li></li>"),
@@ -229,10 +230,60 @@ var Theme = {
 					});
 				}
 				else {
-					$(dom).append($("<li></li>").html(data.errors[0].message));
+					$(dom).append($("<li></li>").html(data.message));
 				}
 
 				$("#twitterFeed").append(dom);
+			});
+		},
+
+		getFacebookPosts : function() {
+			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
+
+			$.get(Theme.endPoint + "/api/theme/callback/theme/default/method/getFacebookPosts", function(data) {
+				var dom = $("<ul id=\"fb-list\"></ul>");
+				if (data.status == 200)
+				{
+					$(data.response.data).each(function() {
+						var story = $("<li></li>"),
+							message = this.story,
+							date = new Date(this.created_time);
+
+						$(story).append($('<p></p>').addClass("date").html(date.toDateString()));
+		                $(story).append($('<p></p>').html(message));
+						$(dom).append(story);
+					});
+				}
+				else
+					$(dom).append($("<li></li>").html(data.message));
+				
+				$("#fbFeed").append(dom);
+			});
+		},
+
+		getGooglePlusActivities : function() {
+			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
+
+			$.get(Theme.endPoint + "/api/theme/callback/theme/default/method/getGooglePlusPosts", function(data) {
+				var dom = $("<ul id=\"gp-list\"></ul>");
+				if (data.status == 200)
+				{
+					$.each(data.response, function(key, value) {
+						console.log(value);
+
+						var story = $("<li></li>"),
+							message = $("<a>").text(value.title).attr("href", value.url),
+							date = new Date(this.published);
+
+						$(story).append($('<p></p>').addClass("date").html(date.toDateString()));
+		                $(story).append($('<p></p>').html(message));
+						$(dom).append(story);
+					})
+				}
+				else
+					$(dom).append($("<li></li>").html(data.message));
+				
+				$("#gpFeed").append(dom);
 			});
 		}
 	}

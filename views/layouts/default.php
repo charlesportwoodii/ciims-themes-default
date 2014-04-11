@@ -25,6 +25,20 @@
 				<?php Yii::app()->clientScript->registerScript('loadRecentTweets', '$(document).ready(function() { Theme.Callbacks.getTweets(); });'); ?>
 				<div id="twitterFeed"></div>
 			<?php endif; ?>
+
+			<!-- Recent Facebook Posts -->
+			<?php if ($this->theme->facebookUserId != NULL): ?>
+				<h4><?php echo Yii::t('DefaultTheme.main', 'Recent Facebook Stories'); ?></h4>
+				<?php Yii::app()->clientScript->registerScript('loadRecentFBStories', '$(document).ready(function() { Theme.Callbacks.getFacebookPosts(); });'); ?>
+				<div id="fbFeed"></div>
+			<?php endif; ?>
+
+			<!-- Recent Google+ Activities -->
+			<?php if ($this->theme->googlePlusAPIKey != NULL && $this->theme->googlePlusUserId != NULL): ?>
+				<h4><?php echo Yii::t('DefaultTheme.main', 'Recent Google+ Activities'); ?></h4>
+				<?php Yii::app()->clientScript->registerScript('loadRecentG+Activities', '$(document).ready(function() { Theme.Callbacks.getGooglePlusActivities(); });'); ?>
+				<div id="gpFeed"></div>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="clearfix"></div>
