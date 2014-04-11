@@ -2,7 +2,6 @@
     "name": "ciims-themes/default",
     "description": "The default theme that comes with CiiMS",
     "license": "MIT",
-    "version" : "1.1",
     "type" : "drupal-theme",
     "keywords": [
         "ciims",
