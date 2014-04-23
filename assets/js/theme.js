@@ -41,7 +41,7 @@ var Theme = {
 			$(".comments_container").show();
 			$(".timeago").timeago();
 			$(".loader").remove();
-		});		
+		});
 	},
 
 	/**
@@ -111,7 +111,7 @@ var Theme = {
 
 	/**
 	 * Inifinite Scrolling Behavior callback, binds js Analytics
-	 * @param  response 
+	 * @param  response
 	 * @param  data
 	 */
 	infScroll : function(response, data) {
@@ -163,10 +163,14 @@ var Theme = {
 	 */
 	loadRegister : function() {
 		Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
-		if ($("#password").val() != undefined && $("#password").val().length > 0)
-			setTimeout(function() { $("#password, #password2").keyup(); }, 200);
+		Theme.zxcvbn();
+	},
 
-		$("#password, #password2").keyup(function() { 
+    zxcvbn : function() {
+        if ($("#password").val() != undefined && $("#password").val().length > 0)
+			setTimeout(function() { $("#password, #password_repeat").keyup(); }, 200);
+
+		$("#password, #password_repeat").keyup(function() {
 		    var element = $(this).attr("id") == "password" ? "password_strength_1" : "password_strength_2";
 		    var score = zxcvbn($(this).val()).score;
 
@@ -181,29 +185,7 @@ var Theme = {
 		    else
 		    	$("#" + element).find(".password_strength").removeClass("great").removeClass("good").removeClass("poor").css("width", "25%");
 		});
-
-		// Override the submit form to display password issues
-		$("form").submit(function(e) { 
-			$("#jsAlert").hide();
-
-			if ($("#password").val().length < 8)
-			{
-				$("#jsAlertContent").text("Your password must be at least 8 characters.").parent().slideDown();
-				e.preventDefault();
-				return false;
-			}
-
-			if ($("#password2").val() != $("#password").val())
-			{
-				$("#jsAlertContent").text("Your passwords do not match!").parent().slideDown();
-				e.preventDefault();
-				return false;
-			}
-
-			return true;
-		});
-	},
-
+    },
 	/**
 	 * Callback actions for API
 	 */
@@ -256,7 +238,7 @@ var Theme = {
 				}
 				else
 					$(dom).append($("<li></li>").html(data.message));
-				
+
 				$("#fbFeed").append(dom);
 			});
 		},
@@ -282,7 +264,7 @@ var Theme = {
 				}
 				else
 					$(dom).append($("<li></li>").html(data.message));
-				
+
 				$("#gpFeed").append(dom);
 			});
 		}

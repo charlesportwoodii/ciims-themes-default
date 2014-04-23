@@ -68,3 +68,14 @@ main .about-container .ciims-comments .loader {
 	text-align:center;
 	margin: 0 auto;
 }
+
+main .edit-profile h3 {
+    text-align:left;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+main .edit-profile p {
+    text-align:left;
+    font-size: 12px;
+}

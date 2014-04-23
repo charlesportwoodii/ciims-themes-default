@@ -31,6 +31,9 @@
 				<div class="clearfix"></div>
 			</header>
 			<main class="pure-g-r">
+                <?php foreach (Yii::app()->user->getFlashes() as $key=>$message): ?>
+                    <div class="alert alert-<?php echo $key; ?>"><?php echo $message; ?></div>
+                <?php endforeach; ?>
 				<?php echo $content; ?>
 			</main>
 			<div class="main-footer-container">

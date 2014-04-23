@@ -2,15 +2,15 @@
     <h2 class="pull-left"><?php echo Yii::t('DefaultTheme.main', 'Register an Account'); ?></h3>
     <hr class="clearfix"/>
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
-            'id'					=>	'login-form',
-            'focus'					=> 'input[type="text"]:first',
-            'registerPureCss'       => false,
-            'enableAjaxValidation'	=>	true,
-            'action'                => $this->createUrl('/register'),
-            'htmlOptions' => array(
-                'class' => 'pure-form pure-form-stacked'
-            )
-        )); ?>
+        'id'					=> 'login-form',
+        'focus'					=> 'input[type="text"]:first',
+        'registerPureCss'       => false,
+        'enableAjaxValidation'	=> true,
+        'htmlOptions' => array(
+            'class' => 'pure-form pure-form-stacked'
+        )
+    )); ?>
+
     <?php if (!Yii::app()->user->isGuest): ?>
         <div class="alert alert-info">
             <?php echo Yii::t('DefaultTheme.main', "{{headsup}} Looks like you're already logged in as {{email}}", array(
@@ -19,17 +19,12 @@
                 )); ?>
          </div>
     <?php else: ?>
-        <?php if ($model->hasErrors()): ?>
-            <div class="alert alert-danger">
-                <?php echo Yii::t('DefaultTheme.main', "{{oops}} There were errors in your form submission. Please correct the items in red below.", array(
-                    '{{oops}}' => CHtml::tag('strong', array(), Yii::t('DefaultTheme.main', 'Oops!'))
-                )); ?>
-            </div>
-        <?php endif; ?>
-        
-        <?php echo $form->TextField($model, 'email', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=>Yii::t('DefaultTheme.main', 'Email Address'))); ?>
-        <?php echo $form->TextField($model, 'displayName', array('class' => 'pure-u-1', 'id'=>'username', 'placeholder'=>Yii::t('DefaultTheme.main', 'Username'))); ?>
-        <?php echo $form->PasswordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=>Yii::t('DefaultTheme.main', 'Password'))); ?>
+         <?php echo $form->errorSummary($model); ?>
+
+         <?php echo $form->textField($model, 'email', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('email') )); ?>
+         <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('displayName') )); ?>
+         <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('password'), 'id' => 'password' )); ?>
+
         <div id ="password_strength_1" class="password_strength_container">
             <div class="password_strength_bg"></div>
             <div class="password_strength" style="width: 0%;"></div>
@@ -39,7 +34,8 @@
             <div class="password_strength_desc"></div>
             <div class="clearfix"></div>
         </div>
-        <?php echo $form->PasswordField($model, 'password2', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=>Yii::t('DefaultTheme.main', 'Password (again)'), 'id' => 'password2')); ?>
+
+        <?php echo $form->passwordField($model, 'password_repeat', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('password_repeat'), 'id' => 'password_repeat' )); ?>
         <div id ="password_strength_2" class="password_strength_container">
             <div class="password_strength_bg"></div>
             <div class="password_strength" style="width: 0%;"></div>
@@ -49,17 +45,18 @@
             <div class="password_strength_desc"></div>
             <div class="clearfix"></div>
         </div>
-                            
-    
+
+
         <div class="pull-left">
             <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'login'), $this->createUrl('/login')); ?>
             <span> | </span>
             <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'forgot'), $this->createUrl('/forgot')); ?>
         </div>
+
         <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
     <?php endif; ?>
-    
+
     <!-- Social Icons -->
     <?php if (Yii::app()->user->isGuest): ?>
         <?php if (count(Cii::getHybridAuthProviders()) >= 1): ?>

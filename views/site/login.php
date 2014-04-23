@@ -2,15 +2,16 @@
     <h2 class="pull-left"><?php echo Yii::t('DefaultTheme.main', 'Login to Your Account'); ?></h3>
     <hr class="clearfix"/>
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
-            'id'					=>	'login-form',
-            'focus'					=> 'input[type="text"]:first',
-            'registerPureCss'       => false,
-            'enableAjaxValidation'	=>	true,
-            'action'                => $this->createUrl('/login') . (isset($_GET['next']) ? '?next=' . $_GET['next'] : NULL),
-            'htmlOptions' => array(
-                'class' => 'pure-form pure-form-stacked'
-            )
-        )); ?>
+        'id'					=> 'login-form',
+        'focus'					=> 'input[type="text"]:first',
+        'registerPureCss'       => false,
+        'enableAjaxValidation'	=> true,
+        'action'                => $this->createUrl('/login') . (isset($_GET['next']) ? '?next=' . $_GET['next'] : NULL),
+        'htmlOptions' => array(
+            'class' => 'pure-form pure-form-stacked'
+        )
+    )); ?>
+
     <?php if (!Yii::app()->user->isGuest): ?>
         <div class="alert alert-info">
             <?php echo Yii::t('DefaultTheme.main', "{{headsup}} Looks like you're already logged in as {{email}}. You should {{logout}} before logging in to another account.", array(
@@ -20,15 +21,11 @@
                 )); ?>
          </div>
     <?php else: ?>
-        <?php if ($model->hasErrors()): ?>
-            <div class="alert alert-danger">
-                <?php echo Yii::t('DefaultTheme.main', "{{oops}} We weren't able to log you in using the provided credentials.", array(
-                    '{{oops}}' => CHtml::tag('strong', array(), Yii::t('DefaultTheme.main', 'Oops!'))
-                )); ?>
-            </div>
-        <?php endif; ?>
-        <?php echo $form->TextField($model, 'username', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=>Yii::t('DefaultTheme.main', 'Email Address'))); ?>
-        <?php echo $form->PasswordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=>Yii::t('DefaultTheme.main', 'Password'))); ?>
+        <?php echo $form->errorSummary($model); ?>
+
+        <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=> $model->GetAttributeLabel('username') )); ?>
+        <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=> $model->GetAttributeLabel('password') )); ?>
+
         <div class="pull-left">
             <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'register'), $this->createUrl('/register')); ?>
             <span> | </span>
@@ -37,7 +34,7 @@
         <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
     <?php endif; ?>
-    
+
     <!-- Social Icons -->
     <?php if (Yii::app()->user->isGuest): ?>
         <?php if (count(Cii::getHybridAuthProviders()) >= 1): ?>

@@ -168,6 +168,14 @@ main .infinite_navigation a:hover strong {
   margin-bottom:20px;
   border:1px solid transparent;
   border-radius:4px;
+  text-align:left;
+  width: 100%;
+  letter-spacing: 0em;
+  clear: both;
+}
+
+.pure-form .alert {
+  width: auto !important;
 }
 
 .alert h4 {
@@ -241,19 +249,23 @@ main .infinite_navigation a:hover strong {
   color:#66512c;
 }
 
-.alert-danger {
+.alert-danger,
+.alert-error {
   color:#a94442;
   background-color:#f2dede;
   border-color:#ebccd1;
 }
 
-.alert-danger hr {
+.alert-danger hr,
+.alert-error hr{
   border-top-color:#e4b9c0;
 }
 
-.alert-danger .alert-link {
+.alert-danger .alert-link,
+.alert-error .alert-link{
   color:#843534;
 }
+
 * {
 	font-family: 'Source Sans Pro', Arial, Helvetica, sans;
 	color: #333;
@@ -600,6 +612,18 @@ main .about-container .ciims-comments .loader {
 	text-align:center;
 	margin: 0 auto;
 }
+
+main .edit-profile h3 {
+    text-align:left;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+main .edit-profile p {
+    text-align:left;
+    font-size: 12px;
+}
+
 /*!
 Pure v0.3.0
 Copyright 2013 Yahoo! Inc. All rights reserved.
@@ -617,9 +641,27 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
     font-size: 12px !important;
 }
 
+.pure-form input.success {
+    border-color: #3c763d !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.pure-form input.warning {
+    border-color: #66512c !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b;
+}
+
+.pure-form input.error {
+    border-color: #843534 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px;
+}
+
 .pure-form button {
     font-family: 'Source Sans Pro', Arial, Helvetica, sans !important;
-} 
+}
 
 .pure-button-xsmall {
     font-size: 70%;
@@ -636,6 +678,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 .pure-button-xlarge {
     font-size: 125%;
 }
+
 @media screen and (max-width: 980px) {
 
 	body {
