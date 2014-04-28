@@ -34,7 +34,7 @@
 			<?php endif; ?>
 
 			<!-- Recent Google+ Activities -->
-			<?php if ($this->theme->googlePlusAPIKey != NULL && $this->theme->googlePlusUserId != NULL): ?>
+			<?php if ($this->theme->googlePlusUserId != NULL): ?>
 				<h4><?php echo Yii::t('DefaultTheme.main', 'Recent Google+ Activities'); ?></h4>
 				<?php Yii::app()->clientScript->registerScript('loadRecentG+Activities', '$(document).ready(function() { Theme.Callbacks.getGooglePlusActivities(); });'); ?>
 				<div id="gpFeed"></div>
