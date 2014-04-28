@@ -29,11 +29,6 @@ class Theme extends CiiThemesModel
 	protected $facebookUserId = NULL;
 
 	/**
-	 * @var string 	The Google+ Public Server API Key
-	 */
-	protected $googlePlusAPIKey = NULL;
-
-	/**
 	 * @var string My Google+ User ID
 	 */
 	protected $googlePlusUserId = NULL;
@@ -45,7 +40,7 @@ class Theme extends CiiThemesModel
 	public function rules()
 	{
 		return array(
-			array('twitterHandle, facebookUserId, googlePlusAPIKey, googlePlusUserId', 'length', 'max' => 255),
+			array('twitterHandle, facebookUserId, googlePlusAPIKey', 'length', 'max' => 255),
 			array('twitterTweetsToFetch', 'numerical', 'integerOnly' => true, 'min' => 0),
 		);
 	}
@@ -59,7 +54,7 @@ class Theme extends CiiThemesModel
 		return array(
 			Yii::t('DefaultTheme', 'Twitter Settings') => array('twitterHandle', 'twitterTweetsToFetch'),
 			Yii::t('DefaultTheme', 'Facebook Settings') => array('facebookUserId'),
-			Yii::t('DefaultTheme', 'Google+ Settings') => array('googlePlusAPIKey', 'googlePlusUserId'),
+			Yii::t('DefaultTheme', 'Google+ Settings') => array('googlePlusUserId'),
 		);
 	}
 
@@ -73,7 +68,6 @@ class Theme extends CiiThemesModel
 			'twitterHandle'        => Yii::t('DefaultTheme', 'Twitter Handle'),
 			'twitterTweetsToFetch' => Yii::t('DefaultTheme', 'Number of Tweets to Fetch'),
 			'facebookUserId' 	   => Yii::t('Defaulttheme', 'Facebook User ID'),
-			'googlePlusAPIKey'	   => Yii::t('Defaulttheme', 'Google+ Public API Key (server)'),
 			'googlePlusUserId'	   => Yii::t('DefaultTheme', 'Your Google+ User ID')
 		);
 	}
@@ -104,12 +98,12 @@ class Theme extends CiiThemesModel
 
     	try {
     		$connection = new TwitterOAuth(
-        		Cii::getConfig('ha_twitter_key', NULL, NULL), 
+        		Cii::getConfig('ha_twitter_key', NULL, NULL),
         		Cii::getConfig('ha_twitter_secret', NULL, NULL),
         		Cii::getConfig('ha_twitter_accessToken', NULL, NULL),
         		Cii::getConfig('ha_twitter_accessTokenSecret', NULL, NULL)
     		);
-    		
+
     		$tweets = Yii::app()->cache->get($this->theme . '_settings_tweets');
 
     		if ($tweets == false)
@@ -127,11 +121,10 @@ class Theme extends CiiThemesModel
 					Yii::app()->cache->set($this->theme . '_settings_tweets', $tweets, 900);
 			}
 
-			echo CJSON::encode($tweets);
+			return $tweets;
 		} catch (Exception $e) {
-			echo CJSON::encode(array('errors' => array(array('message' => $e->getMessage()))));
+			return $e->getMessage();
 		}
-		Yii::app()->end();
 	}
 
 	/**
@@ -169,8 +162,6 @@ class Theme extends CiiThemesModel
       	}
       	else
       		return $result;
-
-      	Yii::app()->end();
 	}
 
 	/**
@@ -180,7 +171,8 @@ class Theme extends CiiThemesModel
 	 */
 	public function getGooglePlusPosts($postData=NULL)
 	{
-		if ($this->googlePlusAPIKey == NULL || $this->googlePlusUserId == NULL)
+        $key = Cii::getConfig('google_plus_public_server_key');
+		if ($key == NULL || $this->googlePlusUserId == NULL)
 			return false;
 
 		$result = Yii::app()->cache->get($this->theme . '_settings_g+_activities');
@@ -189,7 +181,7 @@ class Theme extends CiiThemesModel
 		{
 			$client = new Google_Client();
 			$client->setApplicationName("Client_Library_Examples");
-			$client->setDeveloperKey($this->googlePlusAPIKey);
+			$client->setDeveloperKey($key);
 
 			$service = new Google_Service_Plus($client);
 

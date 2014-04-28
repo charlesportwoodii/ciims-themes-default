@@ -1,3 +1,4 @@
+<?php $next = (isset($_GET['next']) ? '?next=' . $_GET['next'] : NULL); ?>
 <div class="modal-container">
     <h2 class="pull-left"><?php echo Yii::t('DefaultTheme.main', 'Login to Your Account'); ?></h3>
     <hr class="clearfix"/>
@@ -6,7 +7,7 @@
         'focus'					=> 'input[type="text"]:first',
         'registerPureCss'       => false,
         'enableAjaxValidation'	=> true,
-        'action'                => $this->createUrl('/login') . (isset($_GET['next']) ? '?next=' . $_GET['next'] : NULL),
+        'action'                => $this->createUrl('/login') . $next,
         'htmlOptions' => array(
             'class' => 'pure-form pure-form-stacked'
         )
@@ -45,7 +46,7 @@
         <div class="social-buttons">
             <?php foreach (Cii::getHybridAuthProviders() as $k=>$v): ?>
                 <?php if (Cii::get($v, 'enabled', false) == 1): ?>
-                    <?php echo CHtml::link(NULL, $this->createUrl('/hybridauth/'.$k), array('class' => 'social-icons ' . strtolower($k))); ?>
+                    <?php echo CHtml::link(NULL, $this->createUrl('/hybridauth/'.$k) . $next, array('class' => 'social-icons ' . strtolower($k))); ?>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>

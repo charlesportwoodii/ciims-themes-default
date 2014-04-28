@@ -199,9 +199,10 @@ var Theme = {
 
 			$.get(Theme.endPoint + "/api/theme/callback/theme/default/method/getTweets", function(data) {
 				var dom = $("<ul id=\"tweet-list\"></ul>");
+
 				if (data.status == 200)
 				{
-					$(data).each(function() {
+					$(data.response).each(function() {
 						var tweet = $("<li></li>"),
 							date = new Date($(this)[0].created_at),
 							message = $(this)[0].text;
@@ -214,11 +215,13 @@ var Theme = {
 				else {
 					$(dom).append($("<li></li>").html(data.message));
 				}
-
 				$("#twitterFeed").append(dom);
 			});
 		},
 
+        /**
+         * Retrieves facebook posts
+         */
 		getFacebookPosts : function() {
 			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
 
@@ -243,6 +246,9 @@ var Theme = {
 			});
 		},
 
+        /**
+         * Retrieves google+ activities
+         */
 		getGooglePlusActivities : function() {
 			Theme.endPoint = $("#endpoint").attr("data-attr-endpoint");
 
@@ -251,8 +257,6 @@ var Theme = {
 				if (data.status == 200)
 				{
 					$.each(data.response, function(key, value) {
-						console.log(value);
-
 						var story = $("<li></li>"),
 							message = $("<a>").text(value.title).attr("href", value.url),
 							date = new Date(this.published);
