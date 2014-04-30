@@ -46,9 +46,4 @@
 	</div>
 </div>
 
-<?php Yii::app()->getClientScript()
-                ->registerCssFile($this->asset.'/highlight.js/default.css')
-				->registerCssFile($this->asset.'/highlight.js/github.css')
-				->registerScriptFile($this->asset.'/js/marked.js')
-				->registerScriptFile($this->asset.'/highlight.js/highlight.pack.js')
-				->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>
+<?php Yii::app()->getClientScript()->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>

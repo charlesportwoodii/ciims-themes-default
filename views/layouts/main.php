@@ -9,9 +9,8 @@
 		<?php $cs->registerMetaTag('text/html; charset=UTF-8', 'Content-Type', 'Content-Type', array(), 'Content-Type')
                  ->registerMetaTag($this->keywords, 'keywords', 'keywords', array(), 'keywords')
                  ->registerMetaTag(strip_tags($this->params['meta']['description']), 'description', 'description', array(), 'description')
-                 ->registerCssFile($this->asset . (YII_DEBUG ? '/css/theme.css' : '/css/theme.min.css'))
-				 ->registerCssFile($this->asset . '/font-awesome/css/font-awesome.min.css')
-				 ->registerScriptFile($this->asset .(YII_DEBUG ? '/js/theme.js' : '/js/theme.min.js'))
+                 ->registerCssFile($this->asset . (YII_DEBUG ? '/dist/theme.css' : '/dist/theme.min.css'))
+				 ->registerScriptFile($this->asset .(YII_DEBUG ? '/dist/theme.js' : '/dist/theme.min.js'))
 				 ->registerScript('load', '$(document).ready(function() { Theme.load(); });', CClientScript::POS_END); ?>
 	</head>
 	<body>

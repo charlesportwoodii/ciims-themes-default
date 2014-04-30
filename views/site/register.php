@@ -76,5 +76,4 @@
     <div class="clearfix"></div>
 </div>
 
-<?php Yii::app()->clientScript->registerScriptFile($this->asset .'/js/zxcvbn.js'); ?>
 <?php Yii::app()->clientScript->registerScript('password_strength_meter', '$(document).ready(function() { Theme.loadRegister(); });', CClientScript::POS_END);
