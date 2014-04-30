@@ -13,6 +13,10 @@ Or use ```grunt watch```
 
     nohup grunt watch &
 
+Before packaging, be sure to run the build command to generate the minified assets
+
+    grunt build
+    
 ### Provided Functionlaity
 
 This theme provides the basic functionality to pull Tweets from Twitter, and timeline updates from Facebook and Google+. To make use of these features, you __MUST__ create an application on those services and generate OAuth API Tokens. These keys are added on the ```/dashboard/settings/social``` page.
