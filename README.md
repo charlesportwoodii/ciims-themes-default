@@ -1,5 +1,7 @@
 ## CiiMS Default 2014 Theme
 
+[![Latest Stable Version](https://poser.pugx.org/ciims-themes/default/v/stable.png)](https://packagist.org/packages/ciims-themes/default) [![Total Downloads](https://poser.pugx.org/ciims-themes/default/downloads.png)](https://packagist.org/packages/ciims-themes/default) [![Latest Unstable Version](https://poser.pugx.org/ciims-themes/default/v/unstable.png)](https://packagist.org/packages/ciims-themes/default) [![License](https://poser.pugx.org/ciims-themes/default/license.png)](https://packagist.org/packages/ciims-themes/default)
+
 This is the default theme that comes prebundled with CiiMS
 
 ### Building Assets
