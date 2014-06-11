@@ -109,6 +109,9 @@ class Theme extends CiiThemesModel
     		if ($tweets == false)
     		{
 				$tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={$this->twitterHandle}&include_rts=false&exclude_replies=true&count={$this->twitterTweetsToFetch}");
+				
+				if ($tweets->errors)
+					throw new CHttpException(500, $tweets->errors[0]->message.' code:'.$tweets->errors[0]->code);
 				foreach ($tweets as &$tweet)
 	            {
 					$tweet->text = preg_replace("/([\w]+\:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/", "<a target=\"_blank\" href=\"$1\">$1</a>", $tweet->text);
@@ -123,7 +126,7 @@ class Theme extends CiiThemesModel
 
 			return $tweets;
 		} catch (Exception $e) {
-			return $e->getMessage();
+			throw new CHttpException(isset($e->statusCode) ? $e->statusCode : 400, $e->getMessage());
 		}
 	}
 
