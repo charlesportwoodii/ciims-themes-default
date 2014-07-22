@@ -3,7 +3,7 @@
   "dependencies": {
     "fontawesome": "v4.0.3",
     "pure": "~0.4.2",
-    "highlight.js": "https://github.com/components/highlightjs.git#8.0.0",
+    "highlight.min": "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js",
     "zxcvbn": "https://github.com/buttercoin/node-zxcvbn.git#master"
   }
 }

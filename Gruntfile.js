@@ -63,7 +63,7 @@ module.exports = function(grunt) {
             js : {
                 src: [
                     '<%= paths.lib %>/pace/pace.min.js',
-                    '<%= paths.lib %>/highlight.js/highlight.min.js',
+                    '<%= paths.bower %>/highlight.min/index.js',
                     '<%= paths.lib %>/pace/pace.min.js',
                     '<%= paths.bower %>/zxcvbn/zxcvbn/zxcvbn.js',
                     '<%= paths.js %>/*'
