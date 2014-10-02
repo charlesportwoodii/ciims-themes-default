@@ -44,7 +44,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<!--
+	<?php /*<!--
 	<div class="post pure-u-1-2 pull-right container-50">
 		<div class="post-inner">
 			<h2><?php echo Yii::t('DefaultTheme.main', 'About'); ?></h2>
@@ -55,7 +55,7 @@
 			<?php endif; ?>
 		</div>
 	</div>
-	-->
+	--> */ ?>
 	<div class="clearfix"></div>
 </div>
 
