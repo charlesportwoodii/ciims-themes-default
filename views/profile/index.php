@@ -26,8 +26,8 @@
 			<div class=" pure-u-1-2 pull-left">
 				<dl>
 					<div class="dl-container">
-						<dt><?php echo Yii::t('DefaultTheme.main', 'Display Name'); ?></dt>
-						<dd><?php echo $model->displayName; ?></dd>
+						<dt><?php echo Yii::t('DefaultTheme.main', 'Username'); ?></dt>
+						<dd><?php echo $model->username; ?></dd>
 					</div>
 
 					<div class="dl-container">
@@ -44,6 +44,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	<!--
 	<div class="post pure-u-1-2 pull-right container-50">
 		<div class="post-inner">
 			<h2><?php echo Yii::t('DefaultTheme.main', 'About'); ?></h2>
@@ -54,6 +55,7 @@
 			<?php endif; ?>
 		</div>
 	</div>
+	-->
 	<div class="clearfix"></div>
 </div>
 

@@ -37,10 +37,7 @@
 
         <div class="pure-group">
             <h3><?php echo Yii::t('DefaultTheme.main', 'Change Your Information'); ?></h3>
-            <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('displayName') )); ?>
-            <?php echo $form->textField($model, 'firstName', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('firstName') )); ?>
-            <?php echo $form->textField($model, 'lastName', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('lastName') )); ?>
-            <?php echo $form->textArea($model, 'about', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('about') )); ?>
+            <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('username') )); ?>
         </div>
 
 
