@@ -68,7 +68,7 @@ var Theme = {
 		        $(html).removeClass("template").find(".comment_person").append($(gravatar));
 
 		        // Append the byline
-		        var byline = $("<span class='author'><a href='" + endpoint + "/profile/" + response.user_id + "'>" + response.user.displayName+ "</a></span>");
+		        var byline = $("<span class='author'><a href='" + endpoint + "/profile/" + response.user_id + "'>" + response.user.username+ "</a></span>");
 		        var date = new Date(response.created * 1000);
 		        var mydate = date.format('c');
 		        var timeAgo = $("<span class='timeago' title='" + mydate + "'>" + mydate + "</span>");

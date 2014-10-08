@@ -17,9 +17,7 @@
             </div>
         <?php endif; ?>
         <?php echo $form->textField($model, 'email', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'Email Address'))); ?>
-        <?php echo $form->textField($model, 'firstName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'First Name'))); ?>
-        <?php echo $form->textField($model, 'lastName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'Last Name'))); ?>
-        <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'Display Name'))); ?>
+        <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'Username'))); ?>
         <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'placeholder' => Yii::t('DefaultTheme.main', 'Password'))); ?>
     <div>
         <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>

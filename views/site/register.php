@@ -22,7 +22,7 @@
          <?php echo $form->errorSummary($model); ?>
 
          <?php echo $form->textField($model, 'email', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('email') )); ?>
-         <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('displayName') )); ?>
+         <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('username') )); ?>
          <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'placeholder' => $model->getAttributeLabel('password'), 'id' => 'password' )); ?>
 
         <div id ="password_strength_1" class="password_strength_container">
