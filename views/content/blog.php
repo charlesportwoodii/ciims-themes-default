@@ -40,10 +40,13 @@
 	</div>
 </div>
 
-<div class="post">
-	<div class="post-inner" style="margin-top: 20px;">
-		<?php $this->widget('ext.cii.widgets.comments.CiiCommentWidget'); ?>
+<?php if ($content->commentable): ?>
+	<div class="post">
+		<div class="post-inner" style="margin-top: 20px;">
+			<?php $this->widget('ext.cii.widgets.comments.CiiCommentWidget'); ?>
+		</div>
 	</div>
-</div>
 
-<?php Yii::app()->getClientScript()->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>
+	<?php Yii::app()->getClientScript()->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>
+<?php endif; ?>
+
