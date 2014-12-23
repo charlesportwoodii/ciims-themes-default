@@ -1,5 +1,5 @@
 <?php $content = &$data; ?>
-<?php $meta = Content::model()->parseMeta($content->metadata); ?>
+<?php $meta = Content::model()->parseMeta($content->id); ?>
 
 <div id="content" data-attr-id="<?php echo $content->id; ?>">
 	<div class="post">
