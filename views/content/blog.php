@@ -3,7 +3,7 @@
 
 <div id="content" data-attr-id="<?php echo $content->id; ?>">
 	<div class="post">
-		<?php $this->renderPartial('//site/attached-content', array('meta' => Content::model()->parseMeta($content->metadata))); ?>
+		<?php $this->renderPartial('//site/attached-content', array('meta' => Content::model()->parseMeta($content->id))); ?>
 
 		<div class="post-inner">
 			<div class="post-header">
