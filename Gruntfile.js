@@ -14,7 +14,8 @@ module.exports = function(grunt) {
         'copy:fontawesome',
         'concat:css',
         'concat:js',
-        'cssmin:css'
+        'cssmin:css',
+        'uglify:js'
     ]);
 
     grunt.registerTask('build', function() {

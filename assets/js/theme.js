@@ -68,19 +68,30 @@ var Theme = {
 			$("[id ^='upvote']").click(function(e) {
 				e.preventDefault();
 
-				$.post(Theme.endPoint + "/content/like/id/" + id, function(data, textStatus, jqXHR) {
-					if (data.status == undefined)
-						window.location = Theme.endPoint + "/login";
+				var authData = $.parseJSON(localStorage.getItem('ciims')),
+					headers = {
+						'X-Auth-Email': authData.email,
+						'X-Auth-Token': authData.token
+					};
 
-					if (data.status == "success")
-					{
-						var count = parseInt($("#like-count").text());
-						if (data.type == "inc")
-							$("[id ^='like-count']").text(count + 1).parent().parent().parent().addClass("liked");
+				$.ajax({
+					url: Theme.endPoint + "/api/content/like/id/" + id,
+					type: 'GET',
+					headers: headers,
+					success: function(data, textStatus, jqXHR) {
+						if (jqXHR.status != 200)
+							window.location = Theme.endPoint + "/login";
 						else
-							$("[id ^='like-count']").text(count - 1).parent().parent().parent().removeClass("liked");
+						{
+							var count = parseInt($("#like-count").text());
+							if (data.response.type == "inc")
+								$("[id ^='like-count']").text(count + 1).parent().parent().parent().addClass("liked");
+							else
+								$("[id ^='like-count']").text(count - 1).parent().parent().parent().removeClass("liked");
+						}
 					}
 				});
+
 				return false;
 			});
 		},
