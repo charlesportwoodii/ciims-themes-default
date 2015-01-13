@@ -1,6 +1,9 @@
 ## CiiMS Default 2014 Theme
 
-[![Latest Stable Version](https://poser.pugx.org/ciims-themes/default/v/stable.png)](https://packagist.org/packages/ciims-themes/default) [![Total Downloads](https://poser.pugx.org/ciims-themes/default/downloads.png)](https://packagist.org/packages/ciims-themes/default) [![Latest Unstable Version](https://poser.pugx.org/ciims-themes/default/v/unstable.png)](https://packagist.org/packages/ciims-themes/default) [![License](https://poser.pugx.org/ciims-themes/default/license.png)](https://packagist.org/packages/ciims-themes/default)
+[![Latest Version](http://img.shields.io/packagist/v/ciims-themes/default.svg?style=flat)]()
+[![Downloads](http://img.shields.io/packagist/dt/ciims-themes/default.svg?style=flat)]()
+[![Gittip](http://img.shields.io/gittip/charlesportwoodii.svg?style=flat "Gittip")](https://www.gittip.com/charlesportwoodii/)
+[![License](http://img.shields.io/badge/license-MIT-orange.svg?style=flat "License")](https://github.com/charlesportwoodii/ciims-themes-default/blob/master/LICENSE.md)
 
 This is the default theme that comes prebundled with CiiMS
 
