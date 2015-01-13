@@ -4,7 +4,7 @@
 		<div class="post-header">
 			<h2><?php echo CHtml::link($content->title, Yii::app()->createUrl($content->slug)); ?></h2>
 			<span class="author">
-				<?php echo Yii::t('DefaultTheme.main', 'By: {{author}}', array('{{author}}' =>  CHtml::link(CHtml::encode($content->author->username), $this->createUrl("/profile/{$content->author->id}/")))); ?>  &#183; <?php echo Cii::timeago($content->published); ?> 
+				<?php echo Yii::t('themes.default.main', 'By: {{author}}', array('{{author}}' =>  CHtml::link(CHtml::encode($content->author->username), $this->createUrl("/profile/{$content->author->id}/")))); ?>  &#183; <?php echo Cii::timeago($content->published); ?> 
 				<span class="pull-right">
 					<?php echo CHtml::link(CHtml::encode($content->category->name), Yii::app()->createUrl($content->category->slug)); ?>
 				</span>
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="post-details">
-			<?php echo CHtml::link(Yii::t('DefaultTheme.main', 'Read More'), $this->createUrl('/' . $content->slug), array('class' => 'read-more', 'rel' => 'bookmark')); ?>
+			<?php echo CHtml::link(Yii::t('themes.default.main', 'Read More'), $this->createUrl('/' . $content->slug), array('class' => 'read-more', 'rel' => 'bookmark')); ?>
 
 			<div class="icons">
 				<div class="comment-container comment-count" data-attr-slug="<?php echo $this->createUrl('/' . $content->slug); ?>" data-attr-id="<?php echo $content->id; ?>"></div>

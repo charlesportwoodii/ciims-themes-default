@@ -52,9 +52,9 @@ class Theme extends CiiThemesModel
 	public function groups()
 	{
 		return array(
-			Yii::t('DefaultTheme.main', 'Twitter Settings') => array('twitterHandle', 'twitterTweetsToFetch'),
-			Yii::t('DefaultTheme.main', 'Facebook Settings') => array('facebookUserId'),
-			Yii::t('DefaultTheme.main', 'Google+ Settings') => array('googlePlusUserId'),
+			Yii::t('themes.default.main', 'Twitter Settings') => array('twitterHandle', 'twitterTweetsToFetch'),
+			Yii::t('themes.default.main', 'Facebook Settings') => array('facebookUserId'),
+			Yii::t('themes.default.main', 'Google+ Settings') => array('googlePlusUserId'),
 		);
 	}
 
@@ -65,10 +65,10 @@ class Theme extends CiiThemesModel
 	public function attributeLabels()
 	{
 		return array(
-			'twitterHandle'        => Yii::t('DefaultTheme.main', 'Twitter Handle'),
-			'twitterTweetsToFetch' => Yii::t('DefaultTheme.main', 'Number of Tweets to Fetch'),
-			'facebookUserId'       => Yii::t('DefaultTheme.main', 'Facebook User ID'),
-			'googlePlusUserId'     => Yii::t('DefaultTheme.main', 'Your Google+ User ID')
+			'twitterHandle'        => Yii::t('themes.default.main', 'Twitter Handle'),
+			'twitterTweetsToFetch' => Yii::t('themes.default.main', 'Number of Tweets to Fetch'),
+			'facebookUserId'       => Yii::t('themes.default.main', 'Facebook User ID'),
+			'googlePlusUserId'     => Yii::t('themes.default.main', 'Your Google+ User ID')
 		);
 	}
 

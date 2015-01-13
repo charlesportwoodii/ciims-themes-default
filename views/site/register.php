@@ -1,5 +1,5 @@
 <div class="modal-container">
-    <h2 class="pull-left"><?php echo Yii::t('DefaultTheme.main', 'Register an Account'); ?></h3>
+    <h2 class="pull-left"><?php echo Yii::t('themes.default.main', 'Register an Account'); ?></h3>
     <hr class="clearfix"/>
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'					=> 'login-form',
@@ -13,8 +13,8 @@
 
     <?php if (!Yii::app()->user->isGuest): ?>
         <div class="alert alert-info">
-            <?php echo Yii::t('DefaultTheme.main', "{{headsup}} Looks like you're already logged in as {{email}}", array(
-                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('DefaultTheme.main', 'Heads Up!')),
+            <?php echo Yii::t('themes.default.main', "{{headsup}} Looks like you're already logged in as {{email}}", array(
+                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('themes.default.main', 'Heads Up!')),
                     '{{email}}'   => CHtml::tag('strong', array(), Yii::app()->user->email),
                 )); ?>
          </div>
@@ -48,12 +48,12 @@
 
 
         <div class="pull-left">
-            <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'login'), $this->createUrl('/login')); ?>
+            <?php echo CHtml::link(Yii::t('themes.default.main', 'login'), $this->createUrl('/login')); ?>
             <span> | </span>
-            <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'forgot'), $this->createUrl('/forgot')); ?>
+            <?php echo CHtml::link(Yii::t('themes.default.main', 'forgot'), $this->createUrl('/forgot')); ?>
         </div>
 
-        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>
+        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.default.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
     <?php endif; ?>
 
@@ -61,7 +61,7 @@
     <?php if (Yii::app()->user->isGuest): ?>
         <?php if (count(Cii::getHybridAuthProviders()) >= 1): ?>
         <div class="clearfix" style="border-bottom: 1px solid #aaa; margin: 15px;"></div>
-            <span class="login-form-links"><?php echo Yii::t('DefaultTheme.main', 'Or register with one of these social networks'); ?></span>
+            <span class="login-form-links"><?php echo Yii::t('themes.default.main', 'Or register with one of these social networks'); ?></span>
         <?php endif; ?>
         <div class="clearfix"></div>
         <div class="social-buttons">

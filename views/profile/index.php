@@ -8,7 +8,7 @@
 	<?php if (!Yii::app()->user->isGuest): ?>
 		<div class="pure-menu-open pure-menu-horizontal pull-right">
 		    <ul>
-		        <li><?php echo CHtml::link(Yii::t('DefaultTheme.main', 'edit'), $this->createUrl('profile/edit')); ?></li>
+		        <li><?php echo CHtml::link(Yii::t('themes.default.main', 'edit'), $this->createUrl('profile/edit')); ?></li>
 		    </ul>
 		</div>
 		
@@ -26,17 +26,17 @@
 			<div class=" pure-u-1-2 pull-left">
 				<dl>
 					<div class="dl-container">
-						<dt><?php echo Yii::t('DefaultTheme.main', 'Username'); ?></dt>
+						<dt><?php echo Yii::t('themes.default.main', 'Username'); ?></dt>
 						<dd><?php echo $model->username; ?></dd>
 					</div>
 
 					<div class="dl-container">
-						<dt><?php echo Yii::t('DefaultTheme.main', 'Reputation'); ?></dt>
+						<dt><?php echo Yii::t('themes.default.main', 'Reputation'); ?></dt>
 						<dd><?php echo $model->getReputation(); ?></dd>
 					</div>
 
 					<div class="dl-container">
-						<dt><?php echo Yii::t('DefaultTheme.main', 'Registered'); ?></dt>
+						<dt><?php echo Yii::t('themes.default.main', 'Registered'); ?></dt>
 						<dd><?php echo Cii::timeago($model->created); ?></dd>
 					</div>
 				</dl>
@@ -47,9 +47,9 @@
 	<?php /*<!--
 	<div class="post pure-u-1-2 pull-right container-50">
 		<div class="post-inner">
-			<h2><?php echo Yii::t('DefaultTheme.main', 'About'); ?></h2>
+			<h2><?php echo Yii::t('themes.default.main', 'About'); ?></h2>
 			<?php if ($model->about == ''): ?>
-				<p class="alert alert-info"><?php echo Yii::t('DefaultTheme.main', 'This user has not provided any information for themselves.'); ?></p>
+				<p class="alert alert-info"><?php echo Yii::t('themes.default.main', 'This user has not provided any information for themselves.'); ?></p>
 			<?php else: ?>
 				<?php echo $md->safeTransform(strip_tags($model->about)); ?>
 			<?php endif; ?>
@@ -67,7 +67,7 @@
 		<!-- Display Recent Posts by this User -->
 		<div class="post pure-u-1-2 pull-left container-50">
 			<div class="post-inner">
-				<h2><?php echo Yii::t('DefaultTheme.main', 'Recent Posts'); ?></h2>
+				<h2><?php echo Yii::t('themes.default.main', 'Recent Posts'); ?></h2>
 				<?php 
 					$content = new Content;
 					$criteria = $content->getBaseCriteria();
@@ -91,7 +91,7 @@
 		<!-- Show this section only if we are using CiiComments -->
 		<div class="post pure-u-1-2 pull-right container-50">
 			<div class="post-inner">
-				<h2><?php echo Yii::t('DefaultTheme.main', 'Recent Comments'); ?> </h2>
+				<h2><?php echo Yii::t('themes.default.main', 'Recent Comments'); ?> </h2>
 				<div class="ciims-comments" id="ciims_comments">
 					<div class="loader fa fa-spinner fa-spin"></div>
 				</div>

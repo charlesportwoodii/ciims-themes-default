@@ -22,8 +22,8 @@
 				<div class="nav-item"></div>
 				<nav class="top-navigation pull-right">
 					<ul>
-						<li><?php echo CHtml::link(Yii::t('DefaultTheme.main', 'Home'), Yii::app()->getBaseUrl(true)); ?></li>
-						<li><?php echo CHtml::link(Yii::t('DefaultTheme.main', 'Dashboard'), $this->createUrl('/dashboard')); ?></li>
+						<li><?php echo CHtml::link(Yii::t('themes.default.main', 'Home'), Yii::app()->getBaseUrl(true)); ?></li>
+						<li><?php echo CHtml::link(Yii::t('themes.default.main', 'Dashboard'), $this->createUrl('/dashboard')); ?></li>
 						<li><?php echo CHtml::link(NULL, $this->createUrl('/search'), array('class' => 'fa fa-search')); ?></li>
 					</ul>
 				</nav>
@@ -42,8 +42,8 @@
 					</div>
 					<nav class="footer-nav pull-right">
 						<ul>
-							<li><?php echo CHtml::link(Yii::t('DefaultTheme.main', 'Home'), Yii::app()->getBaseUrl(true)); ?></li>
-							<li><?php echo CHtml::link(Yii::t('DefaultTheme.main', 'Dashboard'), $this->createUrl('/dashboard')); ?></li>
+							<li><?php echo CHtml::link(Yii::t('themes.default.main', 'Home'), Yii::app()->getBaseUrl(true)); ?></li>
+							<li><?php echo CHtml::link(Yii::t('themes.default.main', 'Dashboard'), $this->createUrl('/dashboard')); ?></li>
 						</ul>
 					</nav>
 					<div class="clearfix"></div>

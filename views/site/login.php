@@ -1,6 +1,6 @@
 <?php $next = (isset($_GET['next']) ? '?next=' . $_GET['next'] : NULL); ?>
 <div class="modal-container">
-    <h2 class="pull-left"><?php echo Yii::t('DefaultTheme.main', 'Login to Your Account'); ?></h3>
+    <h2 class="pull-left"><?php echo Yii::t('themes.default.main', 'Login to Your Account'); ?></h3>
     <hr class="clearfix"/>
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'					=> 'login-form',
@@ -15,10 +15,10 @@
 
     <?php if (!Yii::app()->user->isGuest): ?>
         <div class="alert alert-info">
-            <?php echo Yii::t('DefaultTheme.main', "{{headsup}} Looks like you're already logged in as {{email}}. You should {{logout}} before logging in to another account.", array(
-                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('DefaultTheme.main', 'Heads Up!')),
+            <?php echo Yii::t('themes.default.main', "{{headsup}} Looks like you're already logged in as {{email}}. You should {{logout}} before logging in to another account.", array(
+                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('themes.default.main', 'Heads Up!')),
                     '{{email}}'   => CHtml::tag('strong', array(), Yii::app()->user->email),
-                    '{{logout}}'  => CHtml::tag('strong', array(), CHtml::link(Yii::t('DefaultTheme.main', 'logout'), $this->createUrl('/logout')))
+                    '{{logout}}'  => CHtml::tag('strong', array(), CHtml::link(Yii::t('themes.default.main', 'logout'), $this->createUrl('/logout')))
                 )); ?>
          </div>
     <?php else: ?>
@@ -28,11 +28,11 @@
         <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=> $model->GetAttributeLabel('password') )); ?>
 
         <div class="pull-left">
-            <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'register'), $this->createUrl('/register')); ?>
+            <?php echo CHtml::link(Yii::t('themes.default.main', 'register'), $this->createUrl('/register')); ?>
             <span> | </span>
-            <?php echo CHtml::link(Yii::t('DefaultTheme.main', 'forgot'), $this->createUrl('/forgot')); ?>
+            <?php echo CHtml::link(Yii::t('themes.default.main', 'forgot'), $this->createUrl('/forgot')); ?>
         </div>
-        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>
+        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.default.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
     <?php endif; ?>
 
@@ -40,7 +40,7 @@
     <?php if (Yii::app()->user->isGuest): ?>
         <?php if (count(Cii::getHybridAuthProviders()) >= 1): ?>
         <div class="clearfix" style="border-bottom: 1px solid #aaa; margin: 15px;"></div>
-            <span class="login-form-links"><?php echo Yii::t('DefaultTheme.main', 'Or sign in with one of these social networks'); ?></span>
+            <span class="login-form-links"><?php echo Yii::t('themes.default.main', 'Or sign in with one of these social networks'); ?></span>
         <?php endif; ?>
         <div class="clearfix"></div>
         <div class="social-buttons">

@@ -1,5 +1,5 @@
 <div class="modal-container">
-    <h2><?php echo Yii::t('DefaultTheme.main', 'This Post is Password Protected'); ?></h2>
+    <h2><?php echo Yii::t('themes.default.main', 'This Post is Password Protected'); ?></h2>
     <hr />
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'                                    => 'login-form',
@@ -16,8 +16,8 @@
             </div>
         <?php endif; ?>
 
-            <?php echo CHtml::passwordField('password',  Cii::get($_POST, 'password', ''), array('class' => 'pure-u-1', 'placeholder'=>Yii::t('DefaultTheme.main', 'Enter the password to view this entry'))); ?>
-            <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('DefaultTheme.main', 'Submit'); ?></button>
+            <?php echo CHtml::passwordField('password',  Cii::get($_POST, 'password', ''), array('class' => 'pure-u-1', 'placeholder'=>Yii::t('themes.default.main', 'Enter the password to view this entry'))); ?>
+            <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.default.main', 'Submit'); ?></button>
             <div class="clearfix"></div>
     <?php $this->endWidget(); ?>
     <div class="clearfix"></div>
