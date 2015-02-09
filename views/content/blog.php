@@ -43,7 +43,7 @@
 <?php if ($content->commentable): ?>
 	<div class="post">
 		<div class="post-inner" style="margin-top: 20px;">
-			<?php $this->widget('ext.cii.widgets.comments.CiiCommentWidget'); ?>
+			<?php $this->widget('cii.widgets.comments.CiiCommentWidget'); ?>
 		</div>
 	</div>
 
