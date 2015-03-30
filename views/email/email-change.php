@@ -1,4 +1,4 @@
-<?php $link = Yii::app()->createAbsoluteUrl('site/emailchange', array('id' => $key)); ?>
+<?php $link = Yii::app()->createAbsoluteUrl('site/emailchange', array('key' => $key)); ?>
 
 <?php echo $user->username; ?>,<br /><br />
 <?php echo Yii::t('themes.default.main', 'This is a notification that a request to change your email address was made on {{name}}. To approve this change, please visit {{link}}', array(
