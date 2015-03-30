@@ -7,6 +7,7 @@
         'focus'					=> 'input[type="text"]:first',
         'registerPureCss'       => false,
         'enableAjaxValidation'	=> true,
+        'action'                => $this->createUrl('/emailchange/') . '/'. $_GET['key'],
         'htmlOptions' => array(
             'class' => 'pure-form pure-form-stacked'
         )
